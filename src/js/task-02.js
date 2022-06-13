@@ -15,15 +15,15 @@ const ingredients = [
 // Після чого, вставить усі <li> за одну операцію у список ul.ingredients.
 
 
-const list = document.querySelector("#ingredients")
-console.log(list);
+const listAll = document.querySelector("#ingredients")
+console.log(listAll)
 
-const  listIngredients = ingredients.map((ingredient, id) => {
+const listIngredients = ingredients.map((ingredient, id) => {
 const ingredientsArr = document.createElement("li")
 ingredientsArr.textContent = ingredient;
 ingredientsArr.classList.add("item")
 ingredientsArr.setAttribute("id", id);
-list.append(ingredientsArr);
+listAll.append(ingredientsArr);
 });
 
 
