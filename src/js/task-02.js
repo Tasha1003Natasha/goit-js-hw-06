@@ -27,4 +27,3 @@ listAll.append(ingredientsArr);
 });
 
 
-
