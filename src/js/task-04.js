@@ -5,9 +5,7 @@
 
 
 const buttonDecrement = document.querySelector(`button[data-action="decrement"]`);  
-console.log(buttonDecrement);
 const buttonIncrement = document.querySelector(`button[data-action="increment"]`);
-console.log(buttonIncrement);
 let counterValue = 0;
 
 buttonDecrement.addEventListener("click", handlerDecrement);

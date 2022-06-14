@@ -21,7 +21,7 @@ const images = [
 // Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
 
 const listGallery = document.querySelector(".gallery")
-console.log(listGallery);
+
 
 const listImages = images.map(({url, alt}) => {
   const listImagesArr = `<li><img src="${url}" alt="${alt}"></li>`;

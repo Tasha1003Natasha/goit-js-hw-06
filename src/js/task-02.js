@@ -16,7 +16,6 @@ const ingredients = [
 
 
 const listAll = document.querySelector("#ingredients")
-console.log(listAll)
 
 const listIngredients = ingredients.map((ingredient, id) => {
 const ingredientsArr = document.createElement("li")
