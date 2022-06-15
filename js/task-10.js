@@ -27,27 +27,45 @@ function getRandomHexColor() {
 }
 
 
-const controlsRef = document.querySelector("#controls");
+const controlsRef =  document.querySelector("#controls");
 console.log(controlsRef);
-
 const boxesRef =  document.querySelector("#boxes");
 console.log(boxesRef);
 
+// Підключення кнопок
 const buttonCreate =  document.querySelector(`button[data-create]`)
+console.log(buttonCreate);
 const buttondestroy = document.querySelector(`button[data-destroy`)
-
-buttonCreate.addEventListener("click", createBoxes);
-buttondestroy.addEventListener("click", destroyBoxes); 
+console.log(buttondestroy);
 
 
-const createBoxes = (amount => {
+// Значення введене в Input
+const numberInput = document.querySelector(".number");
+console.log(numberInput);
 
+numberInput.addEventListener("input", (event) => {
+  amount = event.currentTarget.value;
+  console.log(amount);
 });
 
 
+// Ствоерння div
+const createBoxes = (amount => {
+  const color = getRandomHexColor();
+  const createDiv = document.createElement("div");
+  boxesRef.append(createDiv)
+  console.log(createDiv);
+  
+});
+
+// Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
+
+//  const destroyBoxes =() => {
+//   boxesRef.innerHTML = "";
+//  }
 
 
- const destroyBoxes = () => {
+buttonCreate.addEventListener("click", createBoxes);
+// buttondestroy.addEventListener("click", destroyBoxes); 
 
- }
 

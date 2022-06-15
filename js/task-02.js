@@ -15,7 +15,8 @@ const ingredientsArr = document.createElement("li")
 ingredientsArr.textContent = ingredient;
 ingredientsArr.classList.add("item")
 ingredientsArr.setAttribute("id", id);
-listAll.append(ingredientsArr);
+return ingredientsArr;
 });
 
+listAll.append(...listIngredients);
 

@@ -6,12 +6,16 @@ buttonDecrement.addEventListener("click", handlerDecrement);
 buttonIncrement.addEventListener("click", handlerIncrement); 
 
 
+const valueRef = document.getElementById("value")
+
+
 function handlerDecrement() {
   counterValue = 0;
-  document.getElementById("value").innerHTML = --counterValue;
+  valueRef.innerHTML -=1 ;
 }
 
 function handlerIncrement() {
-  document.getElementById("value").innerHTML = ++counterValue;
+  valueRef.innerHTML = counterValue += 1;
   }
 
+ 
