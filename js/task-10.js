@@ -1,57 +1,39 @@
-// // Напиши скрипт створення і очищення колекції елементів.
-// Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція.
-// Натисненням на кнопку Очистити, колекція елементів очищається.
-
-// <div id="controls">
-//   <input type="number" min="1" max="100" step="1" />
-//   <button type="button" data-create>Create</button>
-//   <button type="button" data-destroy>Destroy</button>
-// </div>
-
-// <div id="boxes"></div>
-// Створи функцію createBoxes(amount), яка приймає один параметр - число. Функція створює стільки <div>,
-// скільки вказано в amount і додає їх у div#boxes.
-
-// Розміри найпершого <div> - 30px на 30px.
-// Кожен елемент після першого повинен бути ширшим і вищим від попереднього на 10px.
-// Всі елементи повинні мати випадковий колір фону у форматі HEX. Використовуй готову функцію getRandomHexColor для отримання кольору.
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215)
-//     .toString(16)
-//     .padStart(6, 0)}`;
-// }
-// Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-const controlsRef = document.querySelector("#controls");
-console.dir(controlsRef);
+const inputRef = document.querySelector("input");
+console.log(inputRef);
+
 const boxesRef = document.querySelector("#boxes");
 
 // Підключення кнопок
 const buttonCreate = document.querySelector(`button[data-create]`);
 const buttondestroy = document.querySelector(`button[data-destroy`);
 
-// Знайти значення amount
-
-
-
-
 // Ствоерння div
-const createBoxes = (amount) => {
- const color = getRandomHexColor();
-  const createDiv = document.createElement("div");
-  boxesRef.append(createDiv)
-  console.log(createDiv);
+const createBoxes = () => {
+  console.log(inputRef.value);
+  let pixEl = 30;
+  for (let i=0; i<inputRef.value; i+=1) {
+    const size = pixEl + i*10;
+    console.log(size);
+    const color = getRandomHexColor();
+    const createDiv = document.createElement("div");
+    createDiv.style.width = size + "px"
+    createDiv.style.height = size + "px"
+    createDiv.style.background = color;
+    boxesRef.append(createDiv)
+    console.log(createDiv);
+  }
 };
 
 // Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
 
-//  const destroyBoxes =() => {
-//   boxesRef.innerHTML = "";
-//  }
+ const destroyBoxes =() => {
+  boxesRef.innerHTML = "";
+ }
 
 buttonCreate.addEventListener("click", createBoxes);
-// buttondestroy.addEventListener("click", destroyBoxes);
+buttondestroy.addEventListener("click", destroyBoxes);
